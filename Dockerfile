@@ -31,4 +31,4 @@ COPY . .
 EXPOSE 9999
 
 # Run the application
-CMD ["/app/wait-for-ollama.sh", "pipenv run uvicorn chat_ollama.chat_ollama:app --host 0.0.0.0 --port 9999"]
+CMD ["./start_app.sh"]
