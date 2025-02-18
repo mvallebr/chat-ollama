@@ -1,0 +1,6 @@
+services:
+  chat-ollama:
+    build: .
+    ports:
+      - "9999:9999"
+    command: pipenv run uvicorn chat_ollama.chat_ollama:app --host 0.0.0.0 --port 9999
