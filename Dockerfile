@@ -15,8 +15,10 @@ RUN pip install --no-cache-dir pipenv
 # Install Ollama CLI
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
+COPY ./chat_ollama/model.txt ./chat_ollama/model.txt
+
 # Download the Llama model
-RUN ollama serve & sleep 1 && ollama pull deepseek-r1
+RUN ollama serve & sleep 1 && ollama pull $(cat ./chat_ollama/model.txt)
 
 # Copy Pipfile and Pipfile.lock
 COPY Pipfile Pipfile.lock ./

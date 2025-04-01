@@ -13,3 +13,6 @@ requests = "*"
 
 [requires]
 python_version = "3.12"
+
+[scripts]
+chat = "python -m chat_ollama.main"
